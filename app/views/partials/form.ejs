@@ -1,0 +1,11 @@
+<% console.log("------------------") %> 
+<% console.log(data.fname) %> 
+<% console.log("------------------") %> 
+
+<form action="." method="POST">
+  <label for="fname">First name:</label><br />
+  <input type="text" id="fname" name="fname" value=<%= typeof data.fname != 'undefined' ? data.fname : "hell" %>  /><br />
+  <label for="lname">Last name:</label><br />
+  <input type="text" id="lname" name="lname" value=<%= typeof data.lname != 'undefined' ? data.lname : "no" %> /><br /><br />
+  <input type="submit" value="Submit" />
+</form>
