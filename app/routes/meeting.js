@@ -2,8 +2,7 @@ const express = require('express');
 const router = express.Router();
 
 router.get('/', (req, res, next) => {
-  res.render('index');
+  res.render('meeting/meeting_list');
 });
-
 
 module.exports = router;
