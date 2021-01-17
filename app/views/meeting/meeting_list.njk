@@ -1,0 +1,19 @@
+{% extends "../components/layout.njk" %}
+
+{% block content %}
+
+    {% set tableData = {
+        data: query,
+        headers: [
+            "ID",
+            "City",
+            "Address",
+            "Start",
+            "Description",
+            "Duration"
+        ],
+        title: "All meetings"
+    } %}
+    {% include "../components/tableFull.njk" %}
+
+{% endblock %}

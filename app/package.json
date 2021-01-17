@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "tailwind:css": "postcss public/css/tailwind.css -o public/css/style.css",
-    "watch": "nodemon -e ejs,js,css,html,jpg,png,scss app.js"
+    "watch": "nodemon -e ejs,js,css,html,jpg,png,scss,njk app.js"
   },
   "keywords": [],
   "author": "",

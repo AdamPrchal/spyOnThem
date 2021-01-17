@@ -1,8 +1,8 @@
 const express = require('express');
 const router = express.Router();
 
-router.get('/', (req, res, next) => {
-  res.render('meeting/meeting_list');
-});
+const meetingController = require('../controllers/meeting');
+
+router.get('/', meetingController.meeting_list);
 
 module.exports = router;

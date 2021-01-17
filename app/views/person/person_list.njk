@@ -1,0 +1,21 @@
+{% extends "../components/layout.njk" %}
+
+{% block content %}
+
+    {% set tableData = {
+        data: query,
+        headers: [
+            "ID",
+            "Nickname",
+            "First name",
+            "Last name",
+            "Location",
+            "Birthday",
+            "Height (cm)",
+            "Gender"
+        ],
+        title: "All people"
+    } %}
+    {% include "../components/tableFull.njk" %}
+
+{% endblock %}

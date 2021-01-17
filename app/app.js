@@ -3,6 +3,7 @@ const cookieParser = require('cookie-parser');
 const express = require('express');
 const path = require('path');
 const logger = require('morgan');
+const nunjucks = require('nunjucks');
 
 const indexRouter = require('./routes/index');
 const personRouter = require('./routes/person');
@@ -13,7 +14,12 @@ const relationRouter = require('./routes/relation');
 const app = express();
 
 app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'ejs');
+app.set('view engine', 'njk');
+
+nunjucks.configure('views', {
+    autoescape: true,
+    express: app
+});
 
 app.use(logger('dev'));
 app.use(express.json());

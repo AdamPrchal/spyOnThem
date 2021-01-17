@@ -1,0 +1,22 @@
+{% extends "../components/layout.njk" %}
+
+{% block content %}
+
+    {% set tableData = {
+        data: query,
+        headers: [
+            "ID",
+            "City",
+            "Street name",
+            "Street number",
+            "Zip",
+            "Country",
+            "Code name",
+            "Latitude",
+            "Longitude"
+        ],
+        title: "All locations"
+    } %}
+    {% include "../components/tableFull.njk" %}
+
+{% endblock %}
