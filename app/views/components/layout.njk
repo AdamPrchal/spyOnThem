@@ -3,24 +3,14 @@
     <head>
         <meta charset="UTF-8"/>
         <title>Spy on Them</title>
-        <link rel="stylesheet" href="css/style.css"/>
+        <link rel="stylesheet" href="/static/css/style.css"/>
+        <link rel="stylesheet" href="/static/css/tailwind.css"/>
         <link
       rel="stylesheet"
       href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
       integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
       crossorigin="anonymous"
 />
-        <style>
-            .bg-black-alt {
-                background: #191919;
-            }
-            .text-black-alt {
-                color: #191919;
-            }
-            .border-black-alt {
-                border-color: #191919;
-            }
-        </style>
     </head>
     <body class="bg-black-alt font-sans leading-normal tracking-normal">
         <nav id="header" class="bg-gray-900 fixed w-full z-10 top-0 shadow">
@@ -120,7 +110,7 @@
                 href="/"
                 class="block py-1 md:py-3 pl-1 align-middle text-gray-500 no-underline hover:text-gray-100 border-b-2 border-gray-900 hover:border-blue-400"
               >
-                                <i class="fas fa-home fa-fw mr-3"></i
+                                <i class="fas fa-home fa-fw mr-1"></i
                 >
                                 <span class="pb-1 md:pb-0 text-sm">Home</span>
                             </a>
@@ -130,7 +120,7 @@
                 href="/person"
                 class="block py-1 md:py-3 pl-1 align-middle text-gray-500 no-underline hover:text-gray-100 border-b-2 border-gray-900 hover:border-pink-400"
               >
-                                <i class="fas fa-users fa-fw mr-3"></i
+                                <i class="fas fa-users fa-fw mr-1"></i
                 >
                                 <span class="pb-1 md:pb-0 text-sm">People</span>
                             </a>
@@ -140,7 +130,7 @@
                 href="/location"
                 class="block py-1 md:py-3 pl-1 align-middle text-gray-500 no-underline hover:text-gray-100 border-b-2 border-gray-900 hover:border-purple-400"
               >
-                                <i class="fa fa-map-marker-alt fa-fw mr-3"></i
+                                <i class="fa fa-map-marker-alt fa-fw mr-1"></i
                 >
                                 <span class="pb-1 md:pb-0 text-sm">Locations</span>
                             </a>
@@ -150,21 +140,21 @@
                 href="/meeting"
                 class="block py-1 md:py-3 pl-1 align-middle text-gray-500 no-underline hover:text-gray-100 border-b-2 border-gray-900 hover:border-green-400"
               >
-                                <i class="fas fa-handshake fa-fw mr-3"></i
+                                <i class="fas fa-handshake fa-fw mr-1"></i
                 >
                                 <span class="pb-1 md:pb-0 text-sm">Meetings</span>
                             </a>
                         </li>
-                        <li id="relations" class="mr-6 my-2 md:my-0">
+                        {# <li id="relations" class="mr-6 my-2 md:my-0">
                             <a
                 href="/relation"
                 class="block py-1 md:py-3 pl-1 align-middle text-gray-500 no-underline hover:text-gray-100 border-b-2 border-gray-900 hover:border-red-400"
               >
-                                <i class="fa fa-heart fa-fw mr-3"></i
+                                <i class="fa fa-heart fa-fw mr-1"></i
                 >
                                 <span class="pb-1 md:pb-0 text-sm">Relations</span>
                             </a>
-                        </li>
+                        </li> #}
                     </ul>
 
                     <div class="relative pull-right pl-4 pr-4 md:pr-0">

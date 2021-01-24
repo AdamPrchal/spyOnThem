@@ -1,17 +1,24 @@
 <div class="w-full p-3">
     <!--Table Card-->
     <div class="bg-gray-900 border border-gray-800 rounded shadow">
-        <div class="border-b border-gray-800 p-3">
-            <h5 class="font-bold uppercase text-gray-600">{{tableData.title}}</h5>
+        <div class="border-b border-gray-800 p-3 flex items-center justify-between">
+            <h5 class="text-3xl font-bold uppercase text-gray-100">{{tableData.title}}</h5>
+            {% if buttonText%}
+                <a href="/{{buttonText}}/add" class="block border border-{{ color }}-800 rounded-md px-4 py-2 m-2 transition duration-250 ease select-none bg-{{ color }}-800 text-white focus:outline-none focus:shadow-outline hover:bg-{{ color }}-900 hover:border-{{ color }}-900">
+                    <i class="fas fa-plus fa-fw mr-1"></i
+                > Add {{buttonText}}</a>
+            {% endif %}
+
         </div>
         <div class="p-5">
-            <table class="w-full p-5 text-gray-700">
+            <table class="w-full p-5 text-gray-400">
                 <thead>
                     <tr>
                         {% for header in tableData.headers %}
-                            <th class="text-left text-gray-600">{{header}}</th>
+                            <th class="text-left text-gray-200">{{header}}</th>
 
                         {% endfor %}
+                        <th></th>
                     </tr>
                 </thead>
 
@@ -20,8 +27,14 @@
                         {% for row in tableData.data %}
                             <tr>
                                 {% for key, value in row %}
-                                    <td>{{value}}</td>
+                                    <td>{{value}}
+                                        {% if value | length == 0 %}–{% endif %}
+                                    </td>
+
                                 {% endfor %}
+                                <td>
+                                    <a href="/{{buttonText}}/{{row.id}}" class="inline-block border border-{{ color }}-800 bg-transparent text-{{ color }}-800 rounded-md px-4 py-2 m-2 transition duration-250 ease select-none hover:bg-{{ color }}-800 hover:text-white focus:outline-none focus:shadow-outline">Detail</a>
+                                </td>
                             </tr>
                         {% endfor %}
                     {% endif %}
