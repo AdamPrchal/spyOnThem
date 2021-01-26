@@ -4,27 +4,16 @@
     <div class="w-full p-3">
         <div class="bg-gray-900 border border-gray-800 rounded shadow">
             <div class="border-b border-gray-800 p-3">
-                <h2 class="font-bold text-2xl uppercase text-white">Add person</h2>
+                <h2 class="font-bold text-2xl uppercase text-white">Add meeting</h2>
             </div>
-            <form action="/person/add" method="post" class="p-8">
+            <form action="/meeting/add" method="post" class="p-8">
                 <div class="text-gray-500 flex content-center justify-center ">
                     <div class="text-base leading-6 space-y-4 text-gray-200 sm:text-lg sm:leading-7">
+
                         <div class="flex flex-col">
-                            <label class="leading-loose">First name</label>
-                            <input required type="text" name="first_name" value="{% if person %}{{person.first_name}}{%else%}{% endif %}" class="px-4 py-2 border focus:ring-gray-500 focus:border-gray-900 w-full sm:text-sm border-gray-300 rounded-md focus:outline-none text-gray-600" placeholder="John">
-                        </div>
-                        <div class="flex flex-col">
-                            <label class="leading-loose">Last name</label>
-                            <input required type="text" name="last_name" value="{% if person %}{{person.last_name}}{%else%}{% endif %}" class="px-4 py-2 border focus:ring-gray-500 focus:border-gray-900 w-full sm:text-sm border-gray-300 rounded-md focus:outline-none text-gray-600" placeholder="Doe">
-                        </div>
-                        <div class="flex flex-col">
-                            <label class="leading-loose">Nickname</label>
-                            <input type="text" name="nickname" value="{% if person %}{{person.nickname}}{%else%}{% endif %}" class="px-4 py-2 border focus:ring-gray-500 focus:border-gray-900 w-full sm:text-sm border-gray-300 rounded-md focus:outline-none text-gray-600" placeholder="FluffyUnicorn42">
-                        </div>
-                        <div class="flex flex-col">
-                            <label class="leading-loose">Birthday</label>
+                            <label class="leading-loose">Start</label>
                             <div class="relative focus-within:text-gray-600 text-gray-400">
-                                <input required type="date" name="birthday" value="{% if person %}{{person.birthday}}{%else%}{% endif %}" class="pr-4 pl-10 py-2 border focus:ring-gray-500 focus:border-gray-900 w-full sm:text-sm border-gray-300 rounded-md focus:outline-none text-gray-600" placeholder="25/02/2020">
+                                <input required type="datetime-local" name="start" value="{% if meeting %}{{meeting.start}}{%else%}{% endif %}" class="pr-4 pl-10 py-2 border focus:ring-gray-500 focus:border-gray-900 w-full sm:text-sm border-gray-300 rounded-md focus:outline-none text-gray-600" placeholder="25/02/2020">
                                 <div class="absolute left-3 top-2">
                                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
@@ -32,20 +21,12 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="flex items-center space-x-4">
-                            <div class="flex flex-col">
-                                <label class="leading-loose">Height (cm)</label>
-                                <input type="text" name="height" value="{% if person %}{{person.height}}{%else%}{% endif %}" class="pr-4 px-4 py-2 border focus:ring-gray-500 focus:border-gray-900 w-full sm:text-sm border-gray-300 rounded-md focus:outline-none text-gray-600" placeholder="183">
-                            </div>
-                            <div class="flex flex-col flex-grow">
-                                <label class="leading-loose">Gender</label>
-                                <select name="gender" id="" class="pr-4 px-4 py-2 border focus:ring-gray-500 focus:border-gray-900 w-full sm:text-sm border-gray-300 rounded-md focus:outline-none text-gray-600">
-                                    <option value="">–</option>
-                                    <option value="M">Male</option>
-                                    <option value="F">Female</option>
-                                </select>
-                            </div>
+
+                        <div class="flex flex-col">
+                            <label class="leading-loose">Duration</label>
+                            <input required type="time" name="duration" value="{% if meeting %}{{meeting.duration}}{%else%}{% endif %}" class="px-4 py-2 border focus:ring-gray-500 focus:border-gray-900 w-full sm:text-sm border-gray-300 rounded-md focus:outline-none text-gray-600">
                         </div>
+
                         <div class="flex flex-col">
                             <label class="leading-loose">Location</label>
                             <select name="location" class="px-4 py-2 border focus:ring-gray-500 focus:border-gray-900 w-full sm:text-sm border-gray-300 rounded-md focus:outline-none text-gray-600">
@@ -55,6 +36,12 @@
                                 {% endfor %}
                             </select>
                         </div>
+
+                        <div class="flex flex-col">
+                            <label class="leading-loose">Description</label>
+                            <textarea id="" cols="30" rows="10" type="textarea" name="description" value="{% if meeting %}{{meeting.description}}{%else%}{% endif %}" class="px-4 py-2 border focus:ring-gray-500 focus:border-gray-900 w-full sm:text-sm border-gray-300 rounded-md focus:outline-none text-gray-600" placeholder="What is going on in there?"></textarea>
+                        </div>
+
                         <input type="submit" value="Add" class="block bg-{{color}}-800 hover:bg-{{color}}-900 text-white px-4 py-3 rounded-md w-full cursor-pointer ">
 
                     </div>
